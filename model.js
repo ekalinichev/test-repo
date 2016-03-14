@@ -2,13 +2,10 @@ import Ember from "ember";
 import DS from "ember-data";
 
 const { attr, belongsTo, hasMany, Model } = DS;
-const { computed } = Ember;
 const { equal, filterBy, mapBy } = computed;
 
 const ROLE_MEMBER = "member";
 const ROLE_OWNER = "owner";
-const VISIBILITY_PRIVATE = "private";
-const VISIBILITY_PUBLIC = "public";
 
 export default Model.extend({
     accountKey: attr("string"),
@@ -18,11 +15,6 @@ export default Model.extend({
     shortName: attr("string"),
     updatedAt: attr("date"),
     visibility: attr("string", { defaultValue: VISIBILITY_PRIVATE }),
-
-    botUsers: hasMany("bot-user", { async: false }),
-    company: belongsTo("company", { async: false }),
-    creator: belongsTo("user", { async: false }),
-    sshKeys: hasMany("ssh-key", { async: false }),
 
     isPrivate: equal("visibility", VISIBILITY_PRIVATE),
     isPublic: equal("visibility", VISIBILITY_PUBLIC),
@@ -36,6 +28,11 @@ export default Model.extend({
         return this.get("members").contains(user);
     },
 
+    fuckYou(bitch) {
+	console.log("added lines");
+	return bitch + 2;
+    },
+    
     hasOwner(user) {
         return this.get("owners").contains(user);
     }
