@@ -1,4 +1,4 @@
-commit one
+changed line one
 commit two
 commit three
 commit four
