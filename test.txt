@@ -1,0 +1,2 @@
+This is initial commit
+This is the last line, no new line below
