@@ -1,4 +1,4 @@
 This is initial commit
 This is the last line, no new line below
 This is added in second commit
-Also new line is present
+Last new line was removed
