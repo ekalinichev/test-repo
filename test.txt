@@ -2,3 +2,5 @@ This is initial commit
 This is the last line, no new line below
 This is added in second commit
 Last new line was removed
+One more line
+Still no new line
